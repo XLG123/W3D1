@@ -73,13 +73,13 @@ class Array
     end
     result
   end
+
   def my_rotate(n=1)
     if n > 0
       n.times {
         self.push(self[0])
         self.shift
       }
-
 
     else
       n.times {
@@ -88,14 +88,29 @@ class Array
       }
     end
   end
+
+  def my_join(separator="")
+    self.join(separator)
+  end
+
+  def my_reverse
+    self.reverse
+  end
 end
 
-a = [ "a", "b", "c", "d" ]
-p a.my_rotate         #=> ["b", "c", "d", "a"]
-p a.my_rotate(2)      #=> ["c", "d", "a", "b"]
-p a.my_rotate(-3)     #=> ["b", "c", "d", "a"]
-p a.my_rotate(15)     #=> ["d", "a", "b", "c"]
+p [ "a", "b", "c" ].my_reverse   #=> ["c", "b", "a"]
+p [ 1 ].my_reverse               #=> [1]
 
+# a = [ "a", "b", "c", "d" ]
+# p a.my_join         # => "abcd"
+# p a.my_join("$")    # => "a$b$c$d"
+
+
+# a = [ "a", "b", "c", "d" ]
+# p a.my_rotate         #=> ["b", "c", "d", "a"]
+# p a.my_rotate(2)      #=> ["c", "d", "a", "b"]
+# p a.my_rotate(-3)     #=> ["b", "c", "d", "a"]
+# p a.my_rotate(15)     #=> ["d", "a", "b", "c"]
 
 # a = [ 4, 5, 6 ]
 # b = [ 7, 8, 9 ]
