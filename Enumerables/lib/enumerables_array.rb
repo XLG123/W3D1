@@ -90,21 +90,43 @@ class Array
   end
 
   def my_join(separator="")
-    self.join(separator)
+    # self.join(separator)
+
+    str = ""
+
+    i = 0
+    while i < self.length
+      str << self[i]
+      str << separator if i != self.length - 1
+      i += 1
+    end
+
+    str
+
   end
 
   def my_reverse
-    self.reverse
+    # self.reverse
+
+    reversed_arr = []
+
+    i = self.length - 1
+    while i >= 0
+      reversed_arr << self[i]
+      i -= 1
+    end
+    
+    reversed_arr
+
   end
 end
 
-p [ "a", "b", "c" ].my_reverse   #=> ["c", "b", "a"]
-p [ 1 ].my_reverse               #=> [1]
+# p [ "a", "b", "c" ].my_reverse   #=> ["c", "b", "a"]
+# p [ 1 ].my_reverse               #=> [1]
 
 # a = [ "a", "b", "c", "d" ]
 # p a.my_join         # => "abcd"
 # p a.my_join("$")    # => "a$b$c$d"
-
 
 # a = [ "a", "b", "c", "d" ]
 # p a.my_rotate         #=> ["b", "c", "d", "a"]
